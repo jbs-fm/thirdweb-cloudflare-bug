@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import { ThirdwebProvider } from "thirdweb/react";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <ThirdwebProvider>{children}</ThirdwebProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
